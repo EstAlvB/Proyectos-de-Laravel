@@ -6,9 +6,21 @@
     <title>MUSIC API</title>
     @vite('resources/css/app.css')
 </head>
-<body class="antialiased">
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+<body>
+    <header>
+        <nav>
+            <div class="flex grow justify-between items-center bg-gradient-to-r from-slate-800 to-red-500 p-5">
+                <h1 class="text-white text-xl font-bold">Welcome</h1>
+                <img src="{{ asset('images/headphone.png')}}" alt="" width="50" height="50">
+                <form action="{{route('logout')}}" method="post">
+                    @csrf
+                    <button><img src="{{asset('images/logout.png')}}" alt="logout" width="30" height="30"></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 class="font-bold text-3xl">YOU ARE LOGGED IN!</h1>
+    </main>
 </body>
 </html>
